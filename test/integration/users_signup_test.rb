@@ -2,11 +2,15 @@ require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
 
+  def setup
+    ActionMailer::Base.deliveries.clear
+  end
+
   test "invalid signup information" do 
     get signup_path
     assert_select 'form[action="/signup"]'
     assert_no_difference 'User.count' do  # upewnij sie ze nie zmienil sie 'arg'
-      post signup_path, user: { name: "", 
+      post users_path, user: { name: "", 
                        email: "user@invalid",
                        password: "foo",
                        password_confirmation: "bar" }
@@ -23,12 +27,27 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get signup_path
     assert_select 'form[action="/signup"]'
     assert_difference 'User.count', 1 do  # upewnij sie ze +1 urosla liczba
-      post_via_redirect signup_path, user: { name: "Example User", 
-                                             email: "user@example.com",
-                                             password: "password",
-                                             password_confirmation: "password" }
+      post users_path, user: { name: "Example User", 
+                               email: "user@example.com",
+                               password: "password",
+                               password_confirmation: "password" }
 
     end
+    assert_equal 1, ActionMailer::Base.deliveries.size
+    user = assigns(:user) # pobiera :user czyli @user z users kontrolera
+    assert_not user.activated?
+    # Try to log in before activation.
+    log_in_as(user)
+    assert_not is_logged_in?
+    # Invalid activation token.
+    get edit_account_activation_path("Invalid token")
+    assert_not is_logged_in?
+    # Invalid email address.
+    get edit_account_activation_path(user.activation_token, email: 'wrong')
+    assert_not is_logged_in?
+    get edit_account_activation_path(user.activation_token, email: user.email)
+    assert user.reload.activated?
+    follow_redirect!
     assert_template 'users/show'            # Generuje template spod adresu
     assert is_logged_in?
   end
