@@ -29,3 +29,4 @@
 # Ignore for deployment
 config/database.yml
 config/secrets.yml
+config/initializers/mail_env_var.rb
