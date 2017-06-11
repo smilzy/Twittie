@@ -23,6 +23,11 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/passenger'
 
+set :ssh_options, { 
+  forward_agent: true, 
+  paranoid: true, 
+  keys: "~/.ssh/id_rsa" 
+}
 
 # If you are using rvm add these lines:
 require 'capistrano/rvm'

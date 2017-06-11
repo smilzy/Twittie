@@ -5,7 +5,9 @@ set :application, "sample_app"
 set :repo_url, "git@bitbucket.org:Smilzy/sample_app.git"
 set :rvm_type, :user
 
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env')
+# set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env')
+append :linked_files, "config/database.yml", "config/secrets.yml"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 set :bundle_binstubs, nil
 set :linked_dirs, ['log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system']
