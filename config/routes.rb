@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get     'help',     to: 'static_pages#help'
   get     'about',    to: 'static_pages#about'
   get     'contact',  to: 'static_pages#contact'
+  get     'cv',    to:    'static_pages#cv'
   get     'signup',   to: 'users#new'
   post    'signup',   to: 'users#create'
   get     'login',    to: 'sessions#new'

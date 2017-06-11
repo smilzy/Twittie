@@ -1,0 +1,284 @@
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.cv{
+    background-color: #DAE2E8;
+    
+  // Style tekstu
+  h1, h2, h3 {
+      font-family: 'Dosis', sans-serif;
+      color: #34a3d7;
+  }
+  
+  .text-center {
+      text-align: center;
+  }
+  
+  // Nagłówek CV 
+  #text-header {
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+  }
+  
+  // Zdjęcie
+  .photo img {
+      margin-top: -75px;
+      vertical-align: middle;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: solid 7px #CCC;
+      display: inline-block;
+  }
+  
+  // Pod zdjęciem
+  .container {
+      margin-top: 70px;
+      margin-bottom: 15px;
+      border: solid 7px #CCC;
+      background-color: #FFF;
+  }
+  
+  .box {
+      margin-bottom: 15px;    
+      p {
+          font-size: 1.1em;
+          line-height: 1.3em;
+          margin-right: 10px;
+      }
+  }
+  
+  // Doświadczenie zawodowe
+  .exp-pozycja {
+      margin-bottom: 15px;
+  }
+  
+  .exp-pozycja .where {
+      font-size: 1.1em;
+      font-weight: bold;
+  }
+  
+  .exp-pozycja .time {
+      font-size: 1em;
+      opacity: 0.7;
+  }
+  
+  .exp-pozycja .profession {
+      font-size: 1.4em;
+      font-weight: bold;    
+  }
+  
+  .exp-pozycja .description {
+      font-size: 1.1em;
+  }
+  
+  // Kontakt well
+  .well {
+      min-width: 300px;
+      background-color: #34a3d7;   
+      h2 {
+      color: #FFF;
+      margin-top: 0px;
+      margin-left: 55px;
+      }
+      .fa {
+          font-size: 2em;
+          color: #FFF;
+      }
+  }
+  
+  .well .contact .fa {
+      font-size: 2em;
+      color: #FFF;
+      opacity: 0.5;
+  }
+  
+  .contact {
+      width: 100%;
+      float: left;
+      .title {
+          width: 80%;
+          width: calc(100% - 55px);
+          font-size: 1.5em;
+          font-weight: 700;
+         // opacity: 0.9;
+          color: #FFF;
+          }
+          a {
+              color: inherit;
+              text-decoration: none;} 
+  }
+  
+  // SZKOŁA
+  .edu .time {
+      float: left;
+      width: 32%;
+      font-size: 1.4em;
+      opacity: 0.7;
+  }
+  
+  .edu .profession {
+      width: 68%;
+      font-size: 1.4em;
+      font-weight: bold;    
+      float: left;
+      .description {
+      font-size: 0.7em;
+      font-weight: normal;
+      }
+  }
+  
+  .edu li {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+      float: left;
+  }
+  
+  // Umiejętności 
+  .skills .well {
+      background-color: #E44D26;   
+      h2 {
+          color: #FFF;
+          margin-top: 0px;
+      }
+      .fa {
+          font-size: 2em;
+          color: #FFF;
+      }
+      .transparent {
+          opacity: 0.5;
+      }
+  }
+  
+  .skills {
+      width: 100%;
+      float: left;
+      
+          .name {
+          float: left;
+          font-size: 1.5em;
+          font-weight: 700;
+        // opacity: 0.9;
+          color: #FFF;
+           }
+  }
+  
+  // Kursy i języki
+  .courses .well {
+      background-color: #D66D75;   
+      h2 {
+          color: #FFF;
+          margin-top: 0px;
+      }
+      .fa {
+          font-size: 2em;
+          color: #FFF;
+      }
+      .transparent {
+          opacity: 0.5;
+      }
+  }
+  
+  .courses {
+      width: 100%;
+      float: left;
+      
+      .name {
+          float: left;
+          font-size: 1.5em;
+          font-weight: 700;
+        // opacity: 0.9;
+          color: #FFF;
+       }
+           
+      li {
+      color: #FFF;
+          p {
+          font-size: 1.1em;
+          line-height: 1.3em;
+          color: #FFF;
+          }
+      }
+  }
+  
+  // MAŁE EKRANY (telefon HD)
+  @media (max-width: 990px) {
+      .rating {
+         margin-left: 15px;
+      }
+      .col-sm-5 {
+          right: 10px;
+      }
+  }
+  
+  // SKILLBARS
+  
+  .skillbar {
+  	position:relative;
+  	display:block;
+  	margin-bottom:15px;
+  	width:100%;
+  	//background:#eee;
+  	background: #E44D26;
+  	height:35px;
+  	border-radius:3px;
+  	-moz-border-radius:3px;
+  	-webkit-border-radius:3px;
+  	-webkit-transition:0.4s linear;
+  	-moz-transition:0.4s linear;
+  	-ms-transition:0.4s linear;
+  	-o-transition:0.4s linear;
+  	transition:0.4s linear;
+  	-webkit-transition-property:width, background-color;
+  	-moz-transition-property:width, background-color;
+  	-ms-transition-property:width, background-color;
+  	-o-transition-property:width, background-color;
+  	transition-property:width, background-color;
+  }
+  
+  .skillbar-title {
+  	position:absolute;
+  	top:0;
+  	left:0;
+  width:160px;
+  	font-weight:bold;
+  	font-size:16px;
+  	color:#ffffff;
+  	-webkit-border-top-left-radius:3px;
+  	-webkit-border-bottom-left-radius:4px;
+  	-moz-border-radius-topleft:3px;
+  	-moz-border-radius-bottomleft:3px;
+  	border-top-left-radius:3px;
+  	border-bottom-left-radius:3px;
+  }
+  
+  .skillbar-title span {
+  	display:block;
+  	padding:0 20px;
+  	height:35px;
+  	line-height:35px;
+  	-webkit-border-top-left-radius:3px;
+  	-webkit-border-bottom-left-radius:3px;
+  	-moz-border-radius-topleft:3px;
+  	-moz-border-radius-bottomleft:3px;
+  	border-top-left-radius:3px;
+  	border-bottom-left-radius:3px;
+  }
+  
+  .skillbar-bar {
+  	height:35px;
+  	width:0px;
+  //	background:#FFD200;
+  	border-radius:3px;
+  	-moz-border-radius:3px;
+  	-webkit-border-radius:3px;
+  	background: #8E0E00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}

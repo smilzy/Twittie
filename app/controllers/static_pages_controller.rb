@@ -14,4 +14,8 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
+  
+  def cv
+    render :layout => 'resume'
+  end
 end
