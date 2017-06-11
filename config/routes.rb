@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :password_resets,       only: [:new, :create, :edit, :update]
   resources :microposts,            only: [:create, :destroy]
   resources :contacts,              only: :create
+  get 'contact-us', to: 'contacts#new', as: 'new_contact'
 end
