@@ -25,3 +25,7 @@
 
 # Ignore uploaded test images.
 /public/uploads
+
+# Ignore for deployment
+config/database.yml
+config/secrets.yml

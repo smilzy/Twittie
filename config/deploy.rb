@@ -9,6 +9,8 @@ set :rvm_type, :user
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
+set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
+
 set :bundle_binstubs, nil
 set :linked_dirs, ['log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system']
 set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets public/assets}
