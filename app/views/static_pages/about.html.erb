@@ -1,7 +1,32 @@
 <% provide(:title, "About") %>
 <h1>About</h1>
 <p>
-  The <a href="http://www.railstutorial.org/"><em>Ruby on Rails
-  Tutorial</em></a>.
-  This is the sample application for the tutorial.
+  This page is build on <strong>Ruby on Rails</strong>, changes made to the 
+  project can be tracked at project's <strong><%= link_to 'GitHub page', 
+  "https://github.com/smilzy/Twittie", target: "_blank" %></strong>.
+</p>
+<p>
+  This app is a copy of a popular blogging app Twitter, made with help of
+  <strong><%= link_to  "Learn Web Development with Rails", "https://railstutorial.org",
+  target: "_blank" %> </strong> with some tweaks. Users can post short messages 
+  on their dashboards. Next thing to add is following users (in progress).
+</p>
+<p>
+  Front is built using <strong>Bootstrap, CSS3 / SASS</strong>, project uses
+  test-driven development, full user authentication made from scratch.
+</p>
+<p>
+  Application uses <strong>Capistrano</strong> for deployment to live servers
+  @MyDevil, with mailer setup on the server, and domain at a different service.
+</p>
+<p>
+  Feel free to check out first project of mine at <strong><%= link_to "Heroku", 
+  "https://stormy-earth-37856.herokuapp.com", target: "_blank" %></strong>.
+  It supports <strong>e-commerce</strong> functionality, users can register
+  for free or pay a monthly fee and automatically get billed in order to see
+  additional contact information of other users.
+</p>
+<br>
+<p>
+  <strong><%= link_to "Aleksander Woźniak", cv_path, target: "_blank" %></strong>
 </p>
