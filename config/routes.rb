@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   root                    'static_pages#home'
   get     'help',     to: 'static_pages#help'
   get     'about',    to: 'static_pages#about'
-  get     'contact',  to: 'static_pages#contact'
   get     'cv',    to:    'static_pages#cv'
   get     'signup',   to: 'users#new'
   post    'signup',   to: 'users#create'
@@ -23,5 +22,5 @@ Rails.application.routes.draw do
   resources :password_resets,       only: [:new, :create, :edit, :update]
   resources :microposts,            only: [:create, :destroy]
   resources :contacts,              only: :create
-  get 'contact-us', to: 'contacts#new', as: 'new_contact'
+  get 'contact', to: 'contacts#new', as: 'new_contact'
 end
